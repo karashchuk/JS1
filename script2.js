@@ -21,29 +21,31 @@ function createTable()
         //td.className = 'name';
         NewRow.appendChild(nCol);
         NewRow.children[0].style.border="1px solid transparent";
-        NewRow.children[0].innerHTML=""+(i+1);
+        NewRow.children[0].innerHTML= "" + (i + 1);
         
-        for (var j=1; j<myCol;j++)
+        for (var j = 1; j < myCol; j++)
         {
             var nCol = document.createElement('td');
             NewRow.appendChild(nCol);
         }
     }
-    for(j=1;j<=myRow;j++)
+    
+    for(j = 1; j <= myRow; j++)
     {
         var i;
-        if(j%2==0){
-            i=2;
+        if(j%2 == 0){
+            i = 2;
         }
         else{
-            i=1;
+            i = 1;
         }
-        for(i;i<myCol;i+=2)
+        for(i; i < myCol; i+= 2)
         {
            myTable.children[j].children[i].style.backgroundColor="gray"; 
         }
     }
 }
+
 window.onload = function()
 {
     var btn = document.getElementById('btnRun');
@@ -51,6 +53,8 @@ window.onload = function()
     var inpN = document.getElementById('N');
     createTable();
 }
+
+
 /*//var Mytable = document.getElementById('Mytable');
 var myTable = document.getElementById('Mytable');
 
