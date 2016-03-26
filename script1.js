@@ -3,7 +3,19 @@ var NN = 0;
 var alfa=["А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"];
 var min=0;
 var max=alfa.length-1;
-
+var colorTable=new Array();
+var fcode=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+var z = 16;
+var l=0;
+for (i=0;i<z;i++){
+    for(j=0;j<z;j++){
+        for(k=0;k<z;k++){
+            colorTable[l]='#'+fcode[i]+fcode[j]+fcode[k];
+            l++;
+        }
+    }
+}
+//alert(colorTable);
 function getRandomInt(minimum, maximum)
 {
   return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -42,7 +54,7 @@ window.onload = function()
         for(var i=0; i<n; i++)
         {
             var lit = getRandomInt(min,max);
-            var coli='#'+getRandomInt(100,999);
+            var coli=colorTable[getRandomInt(0,4096)];
             document.getElementsByClassName('cell')[i].innerHTML=alfa[lit];
             document.getElementsByClassName('cell')[i].style.backgroundColor=coli;            
         }
