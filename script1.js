@@ -5,7 +5,7 @@ var alfa=["А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М",
 var min = 0;
 var max = alfa.length - 1;
 
-var colorTable = new Array();
+/*var colorTable = new Array();
 var fcode = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
 var z = 16;
 var l = 0;
@@ -16,6 +16,11 @@ for (i = 0; i < z; i++){
             l++;
         }
     }
+}*/
+
+function getRandomColor(){
+    var coli=Math.floor(Math.random() * 0xffffff);
+    return '#'+('000000'+coli.toString(16)).substr(-6);
 }
 
 function getRandomInt(minimum, maximum)
@@ -35,7 +40,7 @@ function createMatrix(MM,NN)
         matrix.appendChild(div);
     }
 }
-
+ 
 window.onload = function()
 {
     var btn = document.getElementById('btnRun');
@@ -57,7 +62,7 @@ window.onload = function()
         for(var i = 0; i < n; i++)
         {
             var lit = getRandomInt(min,max);
-            var coli=colorTable[getRandomInt(0,4096)];
+            var coli = getRandomColor();
             document.getElementsByClassName('cell')[i].innerHTML=alfa[lit];
             document.getElementsByClassName('cell')[i].style.backgroundColor=coli;            
         }
