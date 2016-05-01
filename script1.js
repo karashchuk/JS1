@@ -62,7 +62,7 @@ window.onload = function()
         for(var i = 0; i < n; i++)
         {
             var lit = getRandomInt(min,max);
-            var coli = getRandomColor();
+            var coli = '#'+getRandomInt(0;f);
             document.getElementsByClassName('cell')[i].innerHTML=alfa[lit];
             document.getElementsByClassName('cell')[i].style.backgroundColor=coli;            
         }
